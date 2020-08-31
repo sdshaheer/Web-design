@@ -1,0 +1,86 @@
+<!DOCTYOE html>
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+    <style>
+      .button{
+         width:50;
+         height:50;
+         font-size:25px;
+      }
+      .textview{
+        width:215;
+       }
+      .main{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translatex(-50%)translatey(-50%);
+       }
+
+    </style>
+
+</head>
+
+<body>
+   <div class=main>
+   <form name=form>
+      <input class=textview name=textview>
+   </form>
+   <table>
+   <tr>
+      <td><input class="button" type="button" value="7" onclick="cal(7)"></td>
+      <td><input class="button" type="button" value="8" onclick="cal(8)"></td>
+      <td><input class="button" type="button" value="9" onclick="cal(9)"></td>
+      <td><input class="button" type="button" value="+" onclick="cal('+')"></td>
+   </tr>
+
+   <tr>
+      <td><input class="button" type="button" value="6" onclick="cal(6)"></td>
+      <td><input class="button" type="button" value="5" onclick="cal(5)"></td>
+      <td><input class="button" type="button" value="4" onclick="cal(4)"></td>
+      <td><input class="button" type="button" value="-" onclick="cal('-')"></td>
+   </tr>
+
+   <tr>
+      <td><input class="button" type="button" value="1" onclick="cal(1)"></td>
+      <td><input class="button" type="button" value="2" onclick="cal(2)"></td>
+      <td><input class="button" type="button" value="3" onclick="cal(3)"></td>
+      <td><input class="button" type="button" value="*" onclick="cal('*')"></td>
+   </tr>
+
+   <tr>
+      <td><input class="button" type="button" value="0" onclick="cal(0)"></td>
+      <td><input class="button" type="button" value="." onclick="cal('.')"></td>
+      <td><input class="button" type="button" value="/" onclick="cal('/')"></td>
+      <td rowspan=2><input class="button" type="button" style="height:103" value="=" onclick="end()"></td>
+   </tr>
+
+   <tr>
+      <td colspan=2><input class="button" style="width:103" type="button" value="C" onclick="clean()"></td>
+      <td><input class="button" type="button" value="<" onclick="back()"></td>
+   </tr>
+
+   </table>
+   </div>
+   <script>
+      function cal(n){
+           document.form.textview.value=document.form.textview.value+n
+      }
+      function end(){
+           var a= document.form.textview.value
+            document.form.textview.value=eval(a)
+     }
+     function clean(){
+          document.form.textview.value=""
+     }
+     function back(){
+         var a=document.form.textview.value
+         document.form.textview.value=a.substring(0,a.length-1)
+     }
+   </script>
+</body>
+         
+
+
+  
