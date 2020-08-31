@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head> 
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="but.css">
+   <style>
+       button{
+   width:100px;
+   height:100px;
+}
+
+.buttons{
+   width:100px;
+   height:100px;
+   font-size:50px;
+}
+
+body{
+text-align:center;
+}
+
+div{
+width:100px;
+display:inline-block;
+}
+
+.main{
+        position:absolute;
+        top:68%;
+        left:43%;
+        transform:translatex(-50%)translatey(-50%);
+}
+
+body{
+    background:green;
+    opacity:0.8;
+}
+   </style>
+</head>
+<body>
+    <h1>click on start button to start the game</h1><br>
+    <button onclick="load()">START</button><br><br><br>
+    <div class="main">
+    <table>
+    <tr>
+        <td><input id="0" class="buttons" type="button" onclick="a(this)"></td>
+        <td><input id="1" class="buttons" type="button" onclick="a(this)"></td>
+        <td><input id="2" class="buttons" type="button" onclick="a(this)"></td>
+    </tr>
+
+    <tr>
+        <td><input id="3" class="buttons" type="button" onclick="a(this)"></td>
+        <td><input id="4" class="buttons" type="button" onclick="a(this)"></td>
+        <td><input id="5" class="buttons" type="button" onclick="a(this)"></td>
+    </tr>
+
+    <tr>
+        <td><input id="6" class="buttons" type="button" onclick="a(this)"></td>
+        <td><input id="7" class="buttons" type="button" onclick="a(this)"></td>
+        <td><input id="8" class="buttons" type="button" onclick="a(this)"></td>
+    </tr>
+    </table>
+    </div>
+    <script>
+         var b=0;
+         var c=" ";
+         var d=" ";
+         var w=" you won game ";
+         var e="you won the game";
+         var arr=new Array();
+         var count=0;
+         function load(){
+              c=prompt("player1 choice is X enter your name")
+              d=prompt("player2 choice is O enter your name")
+         }
+         function a(z){
+          if(c!=" " && d!=" "){
+             if(b%2==0 && typeof(arr[parseInt(z.id)])!="string"){
+                 b+=1
+                 document.getElementById(z.id).value="X";
+                 arr[parseInt(z.id)]="X"
+                 document.getElementById(z.id).style.backgroundColor="red"
+             }
+             if(b%2!=0 && typeof(arr[parseInt(z.id)])!="string"){
+                 b+=1
+                 document.getElementById(z.id).value="O";
+                 arr[parseInt(z.id)]="O"
+                 document.getElementById(z.id).style.backgroundColor="blue"
+             }
+
+     
+             if((arr[0]=="X" && arr[1]=="X" && arr[2]=="X") || (arr[3]=="X" && arr[4]=="X" && arr[5]=="X") || (arr[6]=="X" && arr[7]=="X" && arr[8]=="X") || (arr[0]=="X" && arr[4]=="X" && arr[8]=="X") || (arr[2]=="X" && arr[4]=="X" && arr[6]=="X") || (arr[0]=="X" && arr[3]=="X" && arr[6]=="X") || (arr[1]=="X" && arr[4]=="X" && arr[7]=="X") || (arr[2]=="X" && arr[5]=="X" && arr[8]=="X")){
+                        count+=1;
+                        alert(c.concat(w));
+                        window.stop();
+              }
+             if((arr[0]=="O" && arr[1]=="O" && arr[2]=="O") || (arr[3]=="O" && arr[4]=="O" && arr[5]=="O") || (arr[6]=="O" && arr[7]=="O" && arr[8]=="O") || (arr[0]=="O" && arr[4]=="O" && arr[8]=="O") || (arr[2]=="O" && arr[4]=="O" && arr[6]=="O") || (arr[0]=="O" && arr[3]=="O" && arr[6]=="O") || (arr[1]=="O" && arr[4]=="O" && arr[7]=="O") || (arr[2]=="O" && arr[5]=="O" && arr[8]=="O")){ 
+                        count+=1;
+                        alert(d.concat(w));
+                        window.stop();
+              }
+             if(b==9){
+                        alert("None of you won the game");
+              }
+                    
+           }
+           else{
+               alert(" Sorry click START button and enter names")
+           }
+         }
+    </script>
+</body>
