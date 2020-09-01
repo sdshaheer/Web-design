@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<style>
+body{
+background:gray;
+}
+
+.box{
+position:absolute;
+padding:30px;
+background:white;
+transform:translate(150px,80px);
+border:outset;
+}
+
+.box a{
+width:50px;
+height:80px;
+margin:10px;
+float:left;
+text-indent:-1000px;
+border:solid 5px brown;
+}
+
+
+
+#red{
+background:red;
+}
+
+#green{
+background:green;
+}
+
+#blue{
+background:blue;
+}
+
+#yellow{
+background:yellow;
+}
+
+#orange{
+background:orange;
+}
+
+#pink{
+background:pink;
+}
+
+marquee{
+width:360px;
+transform:translate(250px,80px);
+position:relative;
+}
+</style>
+</head>
+<body>
+<marquee direction="left" bgcolor="skyblue">click on color</marquee>
+
+<div class="box">
+<a onclick="color('red')" id="red">red</a>
+<a onclick="color('green')" id="green">green</a>
+<a onclick="color('blue')" id="blue">blue</a>
+<a onclick="color('yellow')" id="yellow">yellow</a>
+<a onclick="color('orange')" id="orange">orange</a>
+<a onclick="color('pink')" id="pink">pink</a>
+</div>
+
+<script>
+function color(id){
+   document.body.style.background=document.getElementById(id).innerHTML
+}
+</script>
+</body>
